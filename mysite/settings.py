@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'allauth.account',  
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',  
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +55,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'allauth.account.middleware.AccountMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -62,6 +64,10 @@ MIDDLEWARE = [
 AUTHENTICATION_BACKENDS = ( 'django.contrib.auth.backends.ModelBackend', 
                            'allauth.account.auth_backends.AuthenticationBackend', )
 
+
+CORS_ALLOWED_ORIGINS = [
+    "http://35.174.139.205",  # Adjust with your actual frontend IP or domain
+]
 
 SITE_ID = 1 
 LOGIN_REDIRECT_URL = '/'
