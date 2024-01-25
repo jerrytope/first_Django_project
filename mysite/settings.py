@@ -42,21 +42,21 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'polls',
-    # 'allauth',   
-    # 'allauth.account',  
-    # 'allauth.socialaccount',
-    # 'allauth.socialaccount.providers.google',  
+    'allauth',   
+    'allauth.account',  
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',  
 ]
 
-# MIDDLEWARE = [
-#     'django.middleware.security.SecurityMiddleware',
-#     'django.contrib.sessions.middleware.SessionMiddleware',
-#     'django.middleware.common.CommonMiddleware',
-#     'django.middleware.csrf.CsrfViewMiddleware',
-#     'django.contrib.auth.middleware.AuthenticationMiddleware',
-#     'django.contrib.messages.middleware.MessageMiddleware',
-#     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-# ]
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
 
 AUTHENTICATION_BACKENDS = ( 'django.contrib.auth.backends.ModelBackend', 
                            'allauth.account.auth_backends.AuthenticationBackend', )
