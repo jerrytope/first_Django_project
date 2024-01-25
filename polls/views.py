@@ -4,8 +4,8 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from .models import Contact, Blogs
 from PyPDF2 import PdfFileReader
-from django.core.mail.message import EmailMessage
-from django.core.mail import send_mail
+# from django.core.mail.message import EmailMessage
+# from django.core.mail import send_mail
 from django.conf import settings
 from django.core import mail
 # Create your views here.
@@ -30,13 +30,13 @@ def contact(request):
         quary.save()
 
 
-        from_email=settings.EMAIL_HOST_USER
-        connection=mail.get_connection()
-        connection.open()
-        email_message=mail.EmailMessage(f'Email from {fname}',f'UserEmail : {femail}\nUserPhoneNumber : {fphone}\n\n\n QUERY : {fdescription}',from_email,['ayoadetemitope009@gmail.com','jerrytope009@gmail.com'],connection=connection)
-        # email_client=mail.EmailMessage('Arkprocoder Response','Thanks For Reaching us\n\narkprocoder.tech\n9986786453\nanees@arkprocoder.tech',from_email,[femail],connection=connection)
-        connection.send_messages([email_message])
-        connection.close()
+        # from_email=settings.EMAIL_HOST_USER
+        # connection=mail.get_connection()
+        # connection.open()
+        # email_message=mail.EmailMessage(f'Email from {fname}',f'UserEmail : {femail}\nUserPhoneNumber : {fphone}\n\n\n QUERY : {fdescription}',from_email,['ayoadetemitope009@gmail.com','jerrytope009@gmail.com'],connection=connection)
+        # # email_client=mail.EmailMessage('Arkprocoder Response','Thanks For Reaching us\n\narkprocoder.tech\n9986786453\nanees@arkprocoder.tech',from_email,[femail],connection=connection)
+        # connection.send_messages([email_message])
+        # connection.close()
 
 
         messages.info(request,"Thanks for reaching us, we would get back to you soon......")
