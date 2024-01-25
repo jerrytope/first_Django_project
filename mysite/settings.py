@@ -48,15 +48,15 @@ INSTALLED_APPS = [
     # 'allauth.socialaccount.providers.google',  
 ]
 
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
+# MIDDLEWARE = [
+#     'django.middleware.security.SecurityMiddleware',
+#     'django.contrib.sessions.middleware.SessionMiddleware',
+#     'django.middleware.common.CommonMiddleware',
+#     'django.middleware.csrf.CsrfViewMiddleware',
+#     'django.contrib.auth.middleware.AuthenticationMiddleware',
+#     'django.contrib.messages.middleware.MessageMiddleware',
+#     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+# ]
 
 AUTHENTICATION_BACKENDS = ( 'django.contrib.auth.backends.ModelBackend', 
                            'allauth.account.auth_backends.AuthenticationBackend', )
@@ -92,18 +92,18 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-import dj_database_url
-import os
-DATABASE_URL = 'postgres://django_mlqy_user:ocXopBO5Vjgbn91ucmlo9s3Bmd84HAWA@dpg-cmp202mct0pc73ev879g-a.oregon-postgres.render.com/django_mlqy'
 DATABASES = {
-    "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+# import dj_database_url
+# import os
+# DATABASE_URL = 'postgres://django_mlqy_user:ocXopBO5Vjgbn91ucmlo9s3Bmd84HAWA@dpg-cmp202mct0pc73ev879g-a.oregon-postgres.render.com/django_mlqy'
+# DATABASES = {
+#     "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+# }
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
