@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+{% block title %}
+extract pdf    
+{% endblock title %}
+
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Text Extractor</title>
+</head>
+<body>
+    <h2>Upload a PDF file</h2>
+    <form method="post" enctype="multipart/form-data" action="{% url 'upload_pdf' %}">
+        {% csrf_token %}
+        <input type="file" name="pdf_file" accept=".pdf" required>
+        <button type="submit">Extract Text</button>
+    </form>
+
+
+
+
+</body>
+</html>
+{% endblock body %}
